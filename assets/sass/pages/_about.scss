@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    #ABOUT-WRAP
+\*------------------------------------*/
+
+.page__about {
+    position: relative;
+    padding: 3rem;
+    font-family: $sans-serif;
+    text-shadow: 0 1px 1px black;
+
+    background-image: url(/assets/images/background.jpg);
+    background-color: #222;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+    @include media($medium) {
+        padding: 10vh $scale4 $scale4;
+    }
+
+    @include media($large) {
+        @include flex(50vw);
+        @include align-self(stretch);
+    }
+
+    &:after {
+        content: '';
+        background-color: $dark-overlay;
+        @include position(absolute, 0 0 0 0);
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #SITE-INTRO
+\*------------------------------------*/
+
+.intro {
+    position: relative;
+    margin-bottom: 10vh;
+    z-index: 99;
+    font-family: $sans-serif;
+    font-weight: 300;
+    color: white;
+
+    &:after {
+        content: '';
+        margin-top: $scale3;
+        height: 1px;
+        @include background-image(linear-gradient(90deg, rgba(white, .1), rgba(white, .0)));
+        display: block;
+        position: relative;
+        z-index: 99;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #ABOUT-INFO
+\*------------------------------------*/
+
+.about {
+    position: relative;
+    z-index: 99;
+    color: rgba($gray, .7);
+
+    @include media($large) {
+            max-width: 30rem;
+        }
+
+    &__name {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        line-height: 1.5;
+        color: white;
+        border-bottom: 2px solid rgba(white, .2);
+    }
+}

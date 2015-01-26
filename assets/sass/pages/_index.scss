@@ -1,0 +1,102 @@
+/*------------------------------------*\
+    #SHARED STYLES
+\*------------------------------------*/
+
+/**
+ *  Shared styles used in the parts of the index page.
+ *  e.g. about.html & details.html
+ */
+
+/**
+ * Main Wrapper / Container
+ */
+
+.wrapper {
+
+    &--content {
+        @include media($large) {
+            @include flex-direction(row);
+            @include display(flex);
+            height: 100vh;
+            min-height: $min-height;
+            overflow: hidden;
+        }
+    }
+
+    &--about {
+        margin-bottom: $scale7;
+
+        @include media($large) {
+            float: right;
+            margin-right: $scale2;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+/**
+ * Page Headlines
+ */
+
+.lead {
+    font-size: $scale3;
+    line-height: 2;
+    letter-spacing: .05rem;
+
+    &__subline {
+        display: block;
+        line-height: 1.5;
+        font-size: 1.25rem;
+        font-family: $serif;
+        color: rgba(white, .8);
+
+        &--secondary {
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: .1rem;
+            color: black;
+            border-bottom: 2px solid rgba(black, .2);
+        }
+    }
+}
+
+
+/**
+ * General Paragraph Style
+ */
+
+.description {
+    margin-bottom: $scale;
+    letter-spacing: .02rem;
+
+    &--detail {
+        position: relative;
+        margin-bottom: 2rem;
+        font-family: $serif;
+        line-height: 1.8;
+        z-index: 99;
+    }
+}
+
+
+/**
+ * Subtle Highlight Buzzwords
+ */
+
+.buzzword {
+    font-weight: 400;
+}
+
+
+/**
+ * Default List Style
+ */
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

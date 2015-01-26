@@ -1,0 +1,17 @@
+/**
+ * Move down and fade animation
+ */
+
+@include keyframes(scroll) {
+	0% {
+		@include transform(translateY(0));
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		@include transform(translateY(2rem));
+		opacity: 0;
+	}
+}

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #SVG ICONS
+\*------------------------------------*/
+
+.icon {
+    fill: currentColor;
+    @include transition(fill .5s $ease-out-cubic);
+
+    &--frontend,
+    &--backend,
+    &--design {
+        width: $scale6;
+        height: $scale6;
+        fill: rgba(#adb1b9, .3);
+    }
+
+    &--social {
+        width: $scale1;
+        height: $scale1;
+    }
+}

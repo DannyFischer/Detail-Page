@@ -1,0 +1,58 @@
+{% comment %}
+
+Detail View
+-----------
+
+Creates a section for every markdown file in /_details and appends it to the first
+overview section.
+
+{% endcomment %}
+
+<main class="page__details" role="main">
+
+    <section class="detail">
+        <div class="detail__content">
+            <div class="detail-overview">
+
+                {% for item in site.details %}
+                    <a class="detail__preview" href="#{{ item.class }}" title="&darr; {{ item.title }}">
+                        <svg class="icon  icon--{{ item.class }}"><use xlink:href="#shape--{{ item.background_symbol }}"></use></svg>
+                        <h3 class="detail__preview-title">{{ item.title }}</h3>
+                    </a>
+                {% endfor %}
+
+            </div>
+
+            <h4 class="lead__subline lead__subline--secondary">{{ site.detail.lead }}</h4>
+            <p class="description  description--detail">{{ site.detail.description | newline_to_br }}</p>
+
+            <footer>
+                {% for item in site.details %}
+                {% for tag in item.tags %}
+                    <a class="detail__tag" href="#{{ item.class }}" rel="tag" title="Gehe zu {{ tag }}">{{ tag }}</a>
+                {% endfor %}
+                {% endfor %}
+            </footer>
+
+        </div>
+    </section>
+
+
+    {% for detail in site.details %}
+        <section class="detail" id="{{ detail.class }}">
+            <div class="detail__content">
+
+                <h3 class="detail__title  detail__title--{{ detail.class }}">{{ detail.title }}</h3>
+
+                <div class="description description--detail">{{ detail.content }}</div>
+
+                {{% if detail.background_symbol %}}
+                    <svg class="detail__background  detail__background--{{ detail.class }}"><use xlink:href="#shape--{{ detail.background_symbol }}"></use></svg>
+                {{% endif %}}
+            </div>
+        </section>
+    {% endfor %}
+
+
+
+</main>

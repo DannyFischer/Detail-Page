@@ -1,0 +1,62 @@
+# Site Settings
+title: Danny Fischer - Designer & Developer
+email: hi@danny.fm
+description:
+url: "https://danny.fm"
+baseurl: "/details"
+noindex: true
+
+collections:
+  - details
+
+markdown: kramdown
+
+keep_files:
+  - assets/css/main.css
+  - assets/js/main.js
+
+exclude:
+  - package.json
+  - gulpfile.js
+  - README.md
+  - node_modules
+  - assets/sass
+  - assets/js
+  - assets/images/symbols
+
+author:
+  name: Danny
+  surname: Fischer
+
+
+# About Panel Content
+about:
+  lead: Moin!
+  sub: |
+    Ich bin Danny.
+    Designer & Developer.
+
+  description: |
+    Startete mit 16 Jahren das erste eigene Web-Projekt, seitdem an allen Bauteilen und Facetten des Internets interessiert, insbesondere dessen Technologien.
+
+    Als technisch versierte Person wählte ich die Informatik als Einstiegspunkt, die sich schnell verändernde Branche sowie die selbstständige Arbeit im Bereich Design und Entwicklung treiben mich seither an.
+
+    Freund guter Software und  seit 2004.
+
+    Besitze ausserdem viel zu viele Domains für potentielle Ideen und Projekte.
+
+
+# Details Panel Content
+detail:
+  lead: Details
+  description: |
+    Bereit für den Einsatz an vielen Fronten eines Projekts bleibe ich stets flexibel und neugierig was Gestaltung und Umsetzung anbelangt.
+
+    Sei es One-Pager auf Jekyll-Basis, WordPress als CMS Framework oder Laravel als MVC App: Man sollte immer das passendste Tool für die Aufgabe wählen und mit performanter Front-End Architektur & Server-Infrastruktur abrunden.
+
+
+# Profiles
+social:
+  github: DannyFischer
+  source: https://github.com/DannyFischer/Detail-Page
+  twitter: dnyfsr

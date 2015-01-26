@@ -1,0 +1,28 @@
+{
+  "name": "Danny.fm-Detail-Page",
+  "version": "1.0.0",
+  "author": "Danny Fischer <hi@danny.fm>",
+  "homepage": "https://danny.fm",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/DannyFischer/Detail-Page"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.9.0",
+    "critical": "^0.5.3",
+    "gulp": "^3.8.10",
+    "gulp-add-src": "^0.2.0",
+    "gulp-concat": "^2.4.2",
+    "gulp-imagemin": "^2.1.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-order": "^1.1.1",
+    "gulp-plumber": "^0.6.6",
+    "gulp-ruby-sass": "^1.0.0-alpha",
+    "gulp-svg-sprites": "^1.1.0",
+    "gulp-uglify": "^1.0.2"
+  }
+}

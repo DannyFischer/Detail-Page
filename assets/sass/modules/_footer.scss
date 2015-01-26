@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+
+.site-footer {
+    width: calc(100% - 7rem);
+    position: absolute;
+    z-index: 99;
+    bottom: 1rem;
+    color: rgba(white, .2);
+
+    @include media($large) {
+        max-width: 30rem;
+    }
+}
+
+
+.social {
+    &__item {
+        float: right;
+        margin-right: $scale;
+        color: rgba(white, .2);
+
+        &:hover {
+            color: white;
+        }
+
+        &--colophon {
+            float: left;
+            font-size: $scale-1;
+            letter-spacing: .05rem;
+            color: rgba(white, .3);
+            border-bottom: 2px dashed rgba(white, .1);
+        }
+    }
+}

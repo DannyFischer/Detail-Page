@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+  url(/assets/fonts/RobotoLight.woff2) format('woff2'),
+  url(/assets/fonts/RobotoLight.woff) format('woff')
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'),
+  url(/assets/fonts/RobotoRegular.woff2) format('woff2'),
+  url(/assets/fonts/RobotoRegular.woff) format('woff')
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+  url(/assets/fonts/RobotoMedium.woff2) format('woff2'),
+  url(/assets/fonts/RobotoMedium.woff) format('woff')
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+  url(/assets/fonts/RobotoBold.woff2) format('woff2'),
+  url(/assets/fonts/RobotoBold.woff) format('woff')
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Merriweather Light'), local('Merriweather-Light'),
+  url(/assets/fonts/MerriweatherLight.woff2) format('woff2'),
+  url(/assets/fonts/MerriweatherLight.woff) format('woff')
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'),
+  url(/assets/fonts/MerriweatherRegular.woff2) format('woff2'),
+  url(/assets/fonts/MerriweatherRegular.woff) format('woff')
+}

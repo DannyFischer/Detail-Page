@@ -1,0 +1,26 @@
+{% comment %}
+
+About View
+-----------
+
+The About / Intro section is compiled with the content specified in _config.yml.
+
+{% endcomment %}
+
+<aside class="page__about" role="complementary">
+    <div class="wrapper--about">
+
+        <section class="intro">
+            <h1 class="lead">{{ site.about.lead }}<span class="lead__subline">{{ site.about.sub | newline_to_br }}</span>
+            </h1>
+        </section>
+
+        <section class="about" itemscope itemtype="http://schema.org/Person">
+            <h4 class="about__name" itemprop="name">{{ site.author.name | prepend: 'Über ' }}</h4>
+            <p class="description" itemprop="description">{{ site.about.description | newline_to_br }}</p>
+        </section>
+
+        {% include footer.html %}
+
+    </div>
+</aside>

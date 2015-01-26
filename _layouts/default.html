@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html itemscope itemtype="https://schema.org/WebPage" lang="de">
+{% include head.html %}
+<body>
+	<!-- // Include SVG Symbol Definitions -->
+	{% include svg/symbols.html %}
+
+	<div class="wrapper--content" itemscope itemtype="https://schema.org/AboutPage">
+		{{ content }}
+	</div>
+
+	<!-- // Load JS asynchronously -->
+	<script src="/assets/js/main.js" async></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/**
+ * Fill Text with Background Image
+ *
+ * @ $overlay   = Overlay Color
+ * @ $opacity   = Overlay Opacity
+ * @ $image     = The Background Image
+ */
+
+ @mixin text-background($overlay: #333, $opacity: .4, $image: "/assets/images/background.jpg") {
+ 	color: shade($overlay, 40%); // Fallback
+ 	-webkit-text-fill-color: transparent;
+ 	background: -webkit-linear-gradient(rgba($overlay, $opacity), rgba($overlay, $opacity)),
+ 	url($image) random(100)#{"%"} random(100)#{"%"} repeat;
+ 	background: -o-linear-gradient(rgba($overlay, $opacity), rgba($overlay, $opacity));
+ 	-webkit-background-clip: text;
+ }
