@@ -65,4 +65,5 @@ The distribution-ready file structure: *Libraries » Plugins » Custom JS*
 
 
 # Colophon
-The background image used in the about panel is adapted from my wallpaper [The Next Polylog](https://danny.fm/project/the-next-polylog).
+- The background image used in the about panel is adapted from my wallpaper [The Next Polylog](https://danny.fm/project/the-next-polylog).
+- [loadCSS](https://github.com/filamentgroup/loadCSS) is used to load non-critical CSS asynchronously.
