@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "browser-sync": "^1.9.0",
-    "critical": "^0.5.3",
     "gulp": "^3.8.10",
     "gulp-add-src": "^0.2.0",
     "gulp-concat": "^2.4.2",

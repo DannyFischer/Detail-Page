@@ -12,7 +12,6 @@ collections:
 markdown: kramdown
 
 keep_files:
-  - assets/css/main.css
   - assets/js/main.js
 
 exclude:

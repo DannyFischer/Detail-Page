@@ -1,7 +1,6 @@
 var gulp          = require('gulp'),
     browserSync   = require('browser-sync'),
     reload        = browserSync.reload,
-    critical      = require('critical'),
     cp            = require('child_process'),
     $             = require('gulp-load-plugins')();
 
@@ -35,8 +34,7 @@ gulp.task('sass', function () {
   return $.rubySass('assets/sass/main.scss', {require: ['bourbon', 'neat'],
     style: 'compressed'})
   .pipe($.plumber())
-  .pipe(gulp.dest('_site/assets/css'))
-  .pipe(reload({stream:true}));
+  .pipe(gulp.dest('_includes/css'))
 });
 
 
@@ -96,18 +94,3 @@ gulp.task('watch', ['browser-sync'], function () {
 
 // Default 'gulp' command triggers all of the above and opens a new browser tab with the BrowserSync instance
 gulp.task('default', ['browser-sync', 'watch']);
-
-
-
-// Extract and inline critical-path CSS which is present in the specified viewport
-gulp.task('critical', ['jekyll-rebuild'], function () {
-  critical.generateInline({
-    base: '_site/',
-    src: 'index.html',
-    htmlTarget: 'index.html',
-    width: 1280,
-    height: 900,
-    minify: true,
-    extract: true
-  });
-});
