@@ -3,23 +3,35 @@
 \*------------------------------------*/
 
 .page__details {
+  @include media($large) {
+    width: 50%;
+    float: right;
+    z-index: 0;
+    overflow-y: auto;
+  }
 
-    @include media($large) {
-        @include flex(50vw);
-        z-index: 0;
-        overflow-y: auto;
+  &:hover .icon--frontend {
+    fill: $frontend;
+  }
+  &:hover .icon--backend {
+    fill: $backend;
+  }
+  &:hover .icon--design {
+    fill: $design;
+  }
+
+  // Display SVG in defined color on smaller screens by default.
+  @include media(max-width $large) {
+    .icon--frontend {
+      fill: $frontend;
     }
-
-    &:hover .icon--frontend { fill: $frontend; }
-    &:hover .icon--backend { fill: $backend; }
-    &:hover .icon--design { fill: $design; }
-
-    // Display SVG in defined color on smaller screens by default.
-    @include media(max-width $large) {
-        .icon--frontend { fill: $frontend; }
-        .icon--backend { fill: $backend; }
-        .icon--design { fill: $design; }
+    .icon--backend {
+      fill: $backend;
     }
+    .icon--design {
+      fill: $design;
+    }
+  }
 }
 
 
@@ -40,54 +52,54 @@
 
 
 .detail {
-    @include clearfix;
-    position: relative;
-    padding: 3rem;
-    overflow: hidden;
-    box-shadow: 0 5px 3px -5px rgba($gray, .9);
+  @include clearfix;
+  position: relative;
+  padding: 3rem;
+  overflow: hidden;
+  box-shadow: 0 5px 3px -5px rgba($gray, .9);
 
-    @include media($large) {
-        padding: 15vh $scale5 $scale5;
-        height: 100vh; /* [1] */
-        min-height: $min-height;
-        &:first-of-type {
-            padding-top: 10vh;
-        }
+  @include media($large) {
+    padding: 15vh $scale5 $scale5;
+    height: 100vh; /* [1] */
+    min-height: $min-height;
+    &:first-of-type {
+      padding-top: 10vh;
     }
+  }
 
-    &:nth-of-type(3) {
-        background-color: #f9f9fa;
-        z-index: -1;
-    }
+  &:nth-of-type(3) {
+    background-color: #f9f9fa;
+    z-index: -1;
+  }
 
-    &:first-of-type:after {
-        content: '';
-        @include triangle(1rem, #adb1b9, down);
-        display: block;
-        position: absolute;
-        left: calc(50% - .5rem);
-        bottom: $scale3;
-        @include animation(scroll 3s ease infinite);
-    }
+  &:first-of-type:after {
+    content: "";
+    @include triangle(1rem, #adb1b9, down);
+    display: block;
+    position: absolute;
+    left: calc(50% - .5rem);
+    bottom: $scale3;
+    @include animation(scroll 3s ease infinite);
+  }
 
-    &.is-scrolled:first-of-type:after { /* [2] */
-        visibility: hidden;
-    }
-
+  &.is-scrolled:first-of-type:after {
+    /* [2] */
+    visibility: hidden;
+  }
 }
 
 
 .detail__content {
-    width: 100%;
-    float: left;
+  width: 100%;
+  float: left;
 
-    @include media($large) {
-        max-width: 30rem;
-    }
+  @include media($large) {
+    max-width: 30rem;
+  }
 
-    &--first {
-        float: initial;
-    }
+  &--first {
+    float: initial;
+  }
 }
 
 
@@ -98,9 +110,9 @@
  */
 
 .detail-overview {
-    @include clearfix;
-    margin-top: 3vh;
-    margin-bottom: 8vh;
+  @include clearfix;
+  margin-top: 3vh;
+  margin-bottom: 8vh;
 }
 
 
@@ -111,26 +123,26 @@
  */
 
 .detail__preview {
-    display: block;
-    position: relative;
-    padding: 1rem;
-    text-align: center;
-    border: 1px solid transparent;
-    @include transition(all .3s);
+  display: block;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid transparent;
+  @include transition(all .3s);
 
-    @include media($large) {
-        float: left;
-        width: 33.3%;
+  @include media($large) {
+    float: left;
+    width: 33.3%;
+  }
+
+  &:hover {
+    background-color: #fefefe;
+    border: 1px solid #f0f0f0;
+
+    .detail__preview-title:after {
+      opacity: 1;
     }
-
-    &:hover {
-        background-color: #fefefe;
-        border: 1px solid #f0f0f0;
-
-        .detail__preview-title:after {
-            opacity: 1;
-        }
-    }
+  }
 }
 
 
@@ -141,24 +153,24 @@
  */
 
 .detail__preview-title {
-    display: block;
-    line-height: 2;
-    font-size: $scale;
-    font-weight: 500;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    color: $base-font-color;
+  display: block;
+  line-height: 2;
+  font-size: $scale;
+  font-weight: 500;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  color: $base-font-color;
 
-    &:after {
-        content: '';
-        @include triangle(1rem, #eee, down);
-        display: block;
-        position: absolute;
-        bottom: calc(-.5rem - 1px);
-        left: calc(50% - .5rem);
-        opacity: 0;
-        @include transition(opacity .1s);
-    }
+  &:after {
+    content: "";
+    @include triangle(1rem, #eee, down);
+    display: block;
+    position: absolute;
+    bottom: calc(-.5rem - 1px);
+    left: calc(50% - .5rem);
+    opacity: 0;
+    @include transition(opacity .1s);
+  }
 }
 
 
@@ -172,27 +184,27 @@
  */
 
 .detail__title {
-    margin-bottom: 10vh;
-    font-size: $scale5;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: rem(3px);
-    text-align: center;
-    position: relative;
-    z-index: 99;
-    @include text-background; /* [1] */
+  margin-bottom: 10vh;
+  font-size: $scale5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: rem(3px);
+  text-align: center;
+  position: relative;
+  z-index: 99;
+  @include text-background; /* [1] */
 
-    &--frontend {
-        @include text-background($frontend);
-    }
+  &--frontend {
+    @include text-background($frontend);
+  }
 
-    &--backend {
-        @include text-background($backend);
-    }
+  &--backend {
+    @include text-background($backend);
+  }
 
-    &--design {
-        @include text-background($design);
-    }
+  &--design {
+    @include text-background($design);
+  }
 }
 
 
@@ -203,12 +215,12 @@
  */
 
 .detail__tag {
-    margin-right: $scale;
-    font-weight: 500;
-    font-size: $scale-1;
-    letter-spacing: .05rem;
-    color: #333;
-    border-bottom: 1px solid #ccc;
+  margin-right: $scale;
+  font-weight: 500;
+  font-size: $scale-1;
+  letter-spacing: .05rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
 }
 
 
@@ -220,14 +232,14 @@
  */
 
 .detail__background {
-    fill: #fdfdfd;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 25%;
-    z-index: 1;
+  fill: #fdfdfd;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 25%;
+  z-index: 1;
 
-    &--backend {
-        fill: #fbfbfb;
-    }
+  &--backend {
+    fill: #fbfbfb;
+  }
 }
