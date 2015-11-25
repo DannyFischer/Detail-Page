@@ -1,27 +1,27 @@
 var gulp          = require('gulp'),
-    browserSync   = require('browser-sync'),
-    reload        = browserSync.reload,
     cp            = require('child_process'),
-    $             = require('gulp-load-plugins')();
+    $             = require('gulp-load-plugins')(),
+    bs            = require("browser-sync").create(),
+    reload        = bs.reload;
 
 
 
 // Build Jekyll (via Node.js child process)
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
+  return cp.spawn('jekyll', ['build', '--incremental'], {stdio: 'inherit'})
   .on('close', done);
 });
 
 
 // Build Jekyll and assets then reload the browser
-gulp.task('jekyll-rebuild', ['jekyll-build', 'js', 'img', 'sass'], function () {
-  browserSync.reload();
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+  bs.reload();
 });
 
 
 // Start up BrowserSync to serve the Jekyll generated site
 gulp.task('browser-sync', ['jekyll-rebuild'], function() {
-  browserSync({
+  bs.init({
     server: {
       baseDir: '_site'
     }
@@ -35,6 +35,7 @@ gulp.task('sass', function () {
     style: 'compressed'})
   .pipe($.plumber())
   .pipe(gulp.dest('_includes/css'))
+  .pipe(bs.stream());
 });
 
 
@@ -54,7 +55,7 @@ gulp.task('js', function() {
   .pipe($.concat('main.js'))
   .pipe($.uglify())
   .pipe(gulp.dest('_site/assets/js'))
-  .pipe(reload({stream:true}));
+  .pipe(bs.stream());
 });
 
 
@@ -78,7 +79,7 @@ gulp.task('img', function() {
   return gulp.src('assets/images/*.{jpg,png}')
   .pipe($.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true}))
   .pipe(gulp.dest('_site/assets/images'))
-  .pipe(reload({stream:true}));
+  .pipe(bs.stream());
 });
 
 
