@@ -44,7 +44,7 @@ Where convenient I manually write the whole combined selectors for readability r
 ## JavaScript
 The gulp.js JavaScript task concats and minifies all JavaScript files, libraries and plugins into one resource (main.js) which is loaded asynchonously in the footer. Unnecessary browser requests avoided, great.
 
-The configuartion is set to prepend the contents of `libraries` (e.g. jQuery) and `plugins` to the `main.js` file, which contains project specific JavaScript and is additionally linted. JShint is used for the linting task while it is set to ignore third-party scripts.
+The configuration is set to prepend the contents of `libraries` (e.g. jQuery) and `plugins` to the `main.js` file, which contains project specific JavaScript and is additionally linted. JShint is used for the linting task while it is set to ignore third-party scripts.
 
 The distribution-ready file structure: *Libraries » Plugins » Custom JS*
 
@@ -60,10 +60,8 @@ The distribution-ready file structure: *Libraries » Plugins » Custom JS*
 2. `cd Detail-Page`
 3. `npm install`
 4. Run `gulp` and create things
-6. When finished, run `gulp critical` to inline above the fold styles right into the document.
-7. Put the content of the `_site` folder on a web server.
+5. Put the content of the `_site` folder on a web server.
 
 
 # Colophon
 - The background image used in the about panel is adapted from my wallpaper [The Next Polylog](https://danny.fm/project/the-next-polylog).
-- [loadCSS](https://github.com/filamentgroup/loadCSS) is used to load non-critical CSS asynchronously.
