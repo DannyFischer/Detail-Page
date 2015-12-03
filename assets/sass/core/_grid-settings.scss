@@ -2,16 +2,16 @@
 
 // Dimensions
 $max-width: 30rem;
-$min-height: 50rem;
+$min-height: 55rem;
 
 // Breakpoints
-$small:     rem(480);
-$medium:    rem(640);
-$large:     rem(1024);
+$small: rem(480);
+$medium: rem(640);
+$large: rem(1024);
 
 // Prefix Settings
-$prefix-for-webkit   : true;
-$prefix-for-mozilla  : false;
+$prefix-for-webkit: true;
+$prefix-for-mozilla: false;
 $prefix-for-microsoft: false;
-$prefix-for-opera    : false;
-$prefix-for-spec     : true;
+$prefix-for-opera: false;
+$prefix-for-spec: true;
