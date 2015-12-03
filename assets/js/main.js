@@ -1,5 +1,5 @@
 var scroll	= $('body, .page__details'),
-  details	= $('.page__details'),
+  $window	= $(window),
   intro	= $('.detail:first-of-type');
 
 
@@ -15,8 +15,8 @@ $('a[href^=#]').on('click', function(e){
 
 // Hide scroll indicator if scrolled past 50% of the first detail section
 
-details.scroll(function() {
-  if (details.scrollTop() > intro.height() / 2) {
+$window.scroll(function() {
+  if ($window.scrollTop() > intro.height() / 2) {
     intro.addClass('is-scrolled');
   }
   else {
