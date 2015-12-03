@@ -7,14 +7,14 @@ var gulp          = require('gulp'),
 
 
 // Build Jekyll (via Node.js child process)
-gulp.task('jekyll-build', function (done) {
-  return cp.spawn('jekyll', ['build', '--incremental'], {stdio: 'inherit'})
+gulp.task('jekyll-build', function(done) {
+  return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
   .on('close', done);
 });
 
 
 // Build Jekyll and assets then reload the browser
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], function() {
   bs.reload();
 });
 
@@ -30,7 +30,7 @@ gulp.task('browser-sync', ['jekyll-rebuild'], function() {
 
 
 // Process and minify Sass files
-gulp.task('sass', function () {
+gulp.task('sass', function() {
   return $.rubySass('assets/sass/main.scss', {require: ['bourbon', 'neat'],
     style: 'compressed'})
   .pipe($.plumber())
@@ -60,7 +60,7 @@ gulp.task('js', function() {
 
 
 // Build the SVG sprite
-gulp.task('svg', function () {
+gulp.task('svg', function() {
   return gulp.src('assets/images/symbols/*.svg')
   .pipe($.svgSprites({
     mode:     'symbols',
@@ -84,7 +84,7 @@ gulp.task('img', function() {
 
 
 // Watch for file changes and run specific tasks when detected
-gulp.task('watch', ['browser-sync'], function () {
+gulp.task('watch', ['browser-sync'], function() {
   gulp.watch('assets/sass/**/*.scss', ['sass']);
   gulp.watch('assets/js/**/*.js', ['js']);
   gulp.watch('assets/images/*', ['img']);
